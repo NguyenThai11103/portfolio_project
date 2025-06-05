@@ -1,8 +1,8 @@
+# 💫About Me :
+[![Portfolio](https://img.shields.io/badge/Portfolio-%23FF6B6B.svg?style=plastic&logo=web&logoColor=white)](https://nguyenthai11103.github.io/portfolio_project) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=plastic&logo=facebook&logoColor=white)](https://www.facebook.com/nguyen.thai.11302)
+# Xin chào! 👋 Tôi là Thái
 
-
-# Xin chào! 👋 Tôi là [Tên của bạn]
-
-Chào mừng bạn đến với trang profile GitHub của tôi! Tôi là một [Vai trò/Chuyên ngành của bạn, ví dụ: Nhà phát triển Web Frontend, Kỹ sư Phần mềm]. Tôi đam mê [Lĩnh vực hoặc công nghệ bạn yêu thích, ví dụ: xây dựng giao diện người dùng đẹp mắt, giải quyết vấn đề bằng code].
+Chào mừng bạn đến với trang profile GitHub của tôi! Tôi là một Fullstack Developer.
 
 Tôi hiện đang tập trung vào việc xây dựng các ứng dụng web hiệu quả và thân thiện với người dùng, sử dụng các công nghệ hiện đại.
 
@@ -14,30 +14,22 @@ Dưới đây là một số công nghệ và công cụ mà tôi đã làm vi�
 *   **Backend:** PHP, SQL
 *   **Công cụ/Khác:** Git
 
-*(Bạn có thể thêm hoặc bớt các kỹ năng khác của mình ở đây)*
-
-## 🚀 Dự án Nổi bật
-
-Đây là một số dự án mà tôi muốn chia sẻ:
-
-### [Tên dự án 1] (Ví dụ: Relieflink)
-
-*   **Mô tả:** [Mô tả ngắn gọn về dự án, ví dụ: Một nền tảng thương mại điện tử đầy đủ tính năng được xây dựng với React và Node.js]
-*   **Công nghệ sử dụng:** [Liệt kê các công nghệ chính, ví dụ: React, Node.js, MongoDB, Express]
-*   **Liên kết:** [Link đến GitHub repo của dự án hoặc trang demo]
-
-*(Thêm các dự án khác từ portfolio của bạn theo định dạng tương tự)*
-
-## 📊 Thống kê GitHub
-
-*(Bạn có thể thêm widget thống kê GitHub tại đây. Ví dụ: GitHub Stats, Top Languages Card. Tìm kiếm "github stats readme" để biết cách thêm.)*
-
 ## 📬 Liên hệ
 
 Hãy kết nối với tôi qua:
 
-*   **Email:** [Địa chỉ email của bạn]
-*   **LinkedIn:** [Link profile LinkedIn của bạn]
-*   **Website/Portfolio:** [Link đến website hoặc portfolio của bạn (nếu có)]
+*   **Email:** [kkdn011@gmail.com]
+*    **Phone:** [0775585746]
 
 Cảm ơn bạn đã ghé thăm profile của tôi! Hãy cùng nhau xây dựng những điều tuyệt vời! ✨
+
+# 💻Tech Stack
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=plastic&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=plastic&logo=javascript&logoColor=%23F7DF1E) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=plastic&logo=php&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=plastic&logo=typescript&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=plastic&logo=bootstrap&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=plastic&logo=vuedotjs&logoColor=%234FC08D) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=plastic&logo=tailwind-css&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=plastic&logo=laravel&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=plastic&logo=npm&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=plastic&logo=Canva&logoColor=white)
+# 📊GitHub Stats :
+![](https://github-readme-stats.vercel.app/api?username=NguyenThai11103&theme=radical&hide_border=true&include_all_commits=false&count_private=true)<br/>
+![](https://github-readme-streak-stats.herokuapp.com/?user=NguyenThai11103&theme=radical&hide_border=true)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=NguyenThai11103&theme=radical&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
+
+### ✍️Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
