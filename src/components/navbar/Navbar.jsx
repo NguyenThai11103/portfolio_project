@@ -4,17 +4,17 @@ import './Navbar.css';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [activeNav, setActiveNav] = useState('#home');
-
+const info = {
+        name: "Nguyễn Thái",
+        role: "Fullstack Developer",
+      }
   return (
     <header className="header">
       <nav className="nav container">
         <div className="nav__logo">
-          <div className="nav__profile-img">
-            <img src="./ava.jpg" alt="logo" />
-          </div>
           <div className="nav__profile-info">
-            <h3 className="nav__profile-name">Your Name</h3>
-            <p className="nav__profile-role">Web Developer</p>
+            <h3 className="nav__profile-name">{info.name}</h3>
+            <p className="nav__profile-role">{info.role}</p>
           </div>
         </div>
 
