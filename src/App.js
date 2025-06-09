@@ -17,12 +17,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-        <Home />
-        <About />
-        <Skill/>
-        <Services />
-        <Portfolio />
-        <Contact />
+      <Home />
+      <About />
+      <Skill/>
+      <Services />
+      <Portfolio />
+      <Contact />
     </Router>
   );
 }

@@ -30,20 +30,26 @@ const Skill = () => {
     {
       id: 5,
       name: 'Git',
-      image: 'https://th.bing.com/th/id/OIP.K3VLvX3RhRCJKtog5i5hLAHaEo?rs=1&pid=ImgDetMain',
+      image: 'https://www.20i.com/blog/wp-content/uploads/2022/08/git-blog-header.png',
       class: 'git'
     },
     {
       id: 6,
       name: 'SQL',
-      image: 'https://th.bing.com/th/id/R.3e98e9e20822e10aa3683e7e8b88e47f?rik=i3qJcWQwL9uFEQ&pid=ImgRaw&r=0',
+      image: 'https://logospng.org/download/mysql/mysql-512.png',
       class: 'sql'
     },
     {
       id: 7,
       name: 'PHP',
-      image: 'https://th.bing.com/th/id/OIP.qF-5pDFdeBN8DhoN2tlBcQHaD3?rs=1&pid=ImgDetMain',
+      image: 'https://logowik.com/content/uploads/images/php.jpg',
       class: 'php'
+    },
+    {
+      id: 8,
+      name: 'Canva',
+      image: 'https://freelogopng.com/images/all_img/1656734305canva-app-icon.png',
+      class: 'canva'
     }
   ];
 
@@ -53,7 +59,7 @@ const Skill = () => {
         <h4>Skills & Abilities</h4>
         <div className="skill-cards">
           {skills.map((skill) => (
-            <div key={skill.id} className={`skill-card ${skill.class}`}>
+            <div key={skill.id} className="skill-card">
               <div className="skill-icon">
               </div>
               <img src={skill.image} alt={skill.name} className="skill-image" />
