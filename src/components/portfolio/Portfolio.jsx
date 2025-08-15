@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Portfolio.css";
 import RelieflinkImg from "../../assets/images/relieflink.png";
+import EDUBRIDGETRACE from "../../assets/images/EDUBRIDGETRACE.png";
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
 
@@ -12,6 +13,15 @@ const Portfolio = () => {
       image: RelieflinkImg,
       description:
         "A full-featured e-commerce platform built with React and Node.js",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "EduBridgeTrace",
+      category: "web",
+      image: EDUBRIDGETRACE,
+      description:
+        "A full-featured education platform built with blockchain technology",
       link: "#",
     },
   ];

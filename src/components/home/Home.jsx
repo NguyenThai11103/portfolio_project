@@ -11,13 +11,20 @@ const Home = () => {
     <section className="home">
       {/* Background elements */}
       <div className="gradient-bg"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
-      <div className="particle"></div>
+      <div className="particle particle-blue"></div>
+      <div className="particle particle-pink"></div>
+      <div className="particle particle-yellow"></div>
+      <div className="particle particle-green"></div>
+      <div className="particle particle-purple"></div>
+      <div className="particle particle-orange"></div>
+      <div className="particle particle-blue"></div>
+      <div className="particle particle-pink"></div>
+      <div className="particle particle-yellow"></div>
+      <div className="particle particle-green"></div>
+      <div className="particle particle-purple"></div>
+      <div className="particle particle-orange"></div>
+      <div className="particle particle-blue"></div>
+      <div className="particle particle-pink"></div>
 
       {/* New floating elements */}
       <div className="floating-element"></div>
