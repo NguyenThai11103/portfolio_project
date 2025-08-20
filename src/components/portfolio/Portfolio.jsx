@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Portfolio.css";
 import RelieflinkImg from "../../assets/images/relieflink.png";
 import EDUBRIDGETRACE from "../../assets/images/EDUBRIDGETRACE.png";
+import AgriTrace from "../../assets/images/AgriTrace.png";
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
 
@@ -22,6 +23,15 @@ const Portfolio = () => {
       image: EDUBRIDGETRACE,
       description:
         "A full-featured education platform built with blockchain technology",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "AgriTrace",
+      category: "web",
+      image: AgriTrace,
+      description:
+        "A full-featured agriculture platform built with blockchain technology",
       link: "#",
     },
   ];
