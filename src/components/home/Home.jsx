@@ -76,7 +76,6 @@ const Home = () => {
                 </a>
                 <div class="tooltip">Facebook</div>
               </li>
-              
             </ul>
           </div>
         </div>

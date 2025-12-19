@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./Portfolio.css";
-import RelieflinkImg from "../../assets/images/relieflink.png";
-import EDUBRIDGETRACE from "../../assets/images/EDUBRIDGETRACE.png";
-import AgriTrace from "../../assets/images/AgriTrace.png";
+import {
+  RelieflinkImg,
+  EDUBRIDGETRACE,
+  AgriTrace,
+  CityResQ360,
+} from "../../assets/images";
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
 
@@ -14,7 +17,7 @@ const Portfolio = () => {
       image: RelieflinkImg,
       description:
         "A full-featured e-commerce platform built with React and Node.js",
-      link: "#",
+      link: "https://github.com/NguyenThai11103/DTU-Relieflink-documents",
     },
     {
       id: 2,
@@ -23,7 +26,7 @@ const Portfolio = () => {
       image: EDUBRIDGETRACE,
       description:
         "A full-featured education platform built with blockchain technology",
-      link: "#",
+      link: "https://vietvo371.github.io/EduTraceBridge_docs/GettingStarted/",
     },
     {
       id: 3,
@@ -33,6 +36,15 @@ const Portfolio = () => {
       description:
         "A full-featured agriculture platform built with blockchain technology",
       link: "#",
+    },
+    {
+      id: 4,
+      title: "CityResQ360",
+      category: "web",
+      image: CityResQ360,
+      description:
+        "A full-featured smart-city platform built with microservices architecture",
+      link: "https://nguyenthai11103.github.io/DTU-CityResQ360-documents/intro",
     },
   ];
 

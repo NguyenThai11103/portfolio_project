@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './Navbar.css';
+import React, { useState } from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [activeNav, setActiveNav] = useState('#home');
-const info = {
-        name: "Nguyễn Thái",
-        role: "Fullstack Developer",
-      }
+  const [activeNav, setActiveNav] = useState("#home");
+  const info = {
+    name: "Nguyễn Thái",
+    role: "Fullstack Developer",
+  };
   return (
     <header className="header">
       <nav className="nav container">
@@ -21,50 +21,66 @@ const info = {
         <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list">
             <li className="nav__item">
-              <a 
-                href="#home" 
-                onClick={() => setActiveNav('#home')}
-                className={activeNav === '#home' ? 'nav__link active-link' : 'nav__link'}
+              <a
+                href="#home"
+                onClick={() => setActiveNav("#home")}
+                className={
+                  activeNav === "#home" ? "nav__link active-link" : "nav__link"
+                }
               >
                 <i className="uil uil-estate"></i> Home
               </a>
             </li>
 
             <li className="nav__item">
-              <a 
+              <a
                 href="#about"
-                onClick={() => setActiveNav('#about')}
-                className={activeNav === '#about' ? 'nav__link active-link' : 'nav__link'}
+                onClick={() => setActiveNav("#about")}
+                className={
+                  activeNav === "#about" ? "nav__link active-link" : "nav__link"
+                }
               >
                 <i className="uil uil-user"></i> About
               </a>
             </li>
 
             <li className="nav__item">
-              <a 
+              <a
                 href="#services"
-                onClick={() => setActiveNav('#services')}
-                className={activeNav === '#services' ? 'nav__link active-link' : 'nav__link'}
+                onClick={() => setActiveNav("#services")}
+                className={
+                  activeNav === "#services"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
               >
                 <i className="uil uil-briefcase-alt"></i> Services
               </a>
             </li>
 
             <li className="nav__item">
-              <a 
+              <a
                 href="#portfolio"
-                onClick={() => setActiveNav('#portfolio')}
-                className={activeNav === '#portfolio' ? 'nav__link active-link' : 'nav__link'}
+                onClick={() => setActiveNav("#portfolio")}
+                className={
+                  activeNav === "#portfolio"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
               >
                 <i className="uil uil-scenery"></i> Portfolio
               </a>
             </li>
 
             <li className="nav__item">
-              <a 
+              <a
                 href="#contact"
-                onClick={() => setActiveNav('#contact')}
-                className={activeNav === '#contact' ? 'nav__link active-link' : 'nav__link'}
+                onClick={() => setActiveNav("#contact")}
+                className={
+                  activeNav === "#contact"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
               >
                 <i className="uil uil-message"></i> Contact
               </a>
