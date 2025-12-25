@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav__social">
-          <a href="#" className="nav__social-link">
+          {/* <a href="#" className="nav__social-link">
             <i className="uil uil-facebook-f"></i>
           </a>
           <a href="#" className="nav__social-link">
@@ -101,7 +101,7 @@ const Navbar = () => {
           </a>
           <a href="#" className="nav__social-link">
             <i className="uil uil-instagram"></i>
-          </a>
+          </a> */}
         </div>
 
         <div className="nav__toggle" onClick={() => setToggle(!toggle)}>

@@ -12,7 +12,7 @@ const Skill = () => {
     {
       id: 2,
       name: 'React',
-      image: 'https://th.bing.com/th/id/OIP.HLxLvGJV-6r8ZR8AK4F9KAHaEO?rs=1&pid=ImgDetMain',
+      image: 'https://www.vhv.rs/dpng/d/524-5245981_react-js-logo-png-transparent-png-download.png',
       class: 'react'
     },
     {
@@ -30,7 +30,7 @@ const Skill = () => {
     {
       id: 5,
       name: 'Git',
-      image: 'https://www.20i.com/blog/wp-content/uploads/2022/08/git-blog-header.png',
+      image: 'https://creazilla-store.fra1.digitaloceanspaces.com/icons/3253808/git-icon-icon-md.png',
       class: 'git'
     },
     {
@@ -41,9 +41,9 @@ const Skill = () => {
     },
     {
       id: 7,
-      name: 'PHP',
-      image: 'https://logowik.com/content/uploads/images/php.jpg',
-      class: 'php'
+      name: 'Laravel',
+      image: 'https://logospng.org/download/laravel/logo-laravel-icon-1024.png',
+      class: 'laravel'
     },
     {
       id: 8,

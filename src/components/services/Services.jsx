@@ -25,8 +25,8 @@ const Services = () => {
     },
     {
       icon: '🔒',
-      title: 'Security',
-      description: 'Implement robust security measures to protect your applications.'
+      title: 'Blockchain',
+      description: 'Development of decentralized applications and smart contracts on various blockchain platforms.'
     },
     {
       icon: '🛠',
