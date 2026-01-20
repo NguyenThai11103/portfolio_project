@@ -1,6 +1,6 @@
 .services {
   padding: 6rem 2rem;
-  background-color: #f8f9fa;
+  background-color: var(--body-color);
 }
 
 .services-container {
@@ -16,10 +16,10 @@
 }
 
 .service-card {
-  background: white;
+  background: var(--container-color);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -36,12 +36,12 @@
 
 .service-title {
   font-size: 1.5rem;
-  color: #2d3436;
+  color: var(--title-color);
   margin-bottom: 1rem;
 }
 
 .service-description {
-  color: #636e72;
+  color: var(--text-color);
   line-height: 1.6;
   font-size: 1rem;
 }

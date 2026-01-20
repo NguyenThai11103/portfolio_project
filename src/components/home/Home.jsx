@@ -14,27 +14,7 @@ const Home = () => {
       <div className="particle particle-blue"></div>
       <div className="particle particle-pink"></div>
       <div className="particle particle-yellow"></div>
-      <div className="particle particle-green"></div>
       <div className="particle particle-purple"></div>
-      <div className="particle particle-orange"></div>
-      <div className="particle particle-blue"></div>
-      <div className="particle particle-pink"></div>
-      <div className="particle particle-yellow"></div>
-      <div className="particle particle-green"></div>
-      <div className="particle particle-purple"></div>
-      <div className="particle particle-orange"></div>
-      <div className="particle particle-blue"></div>
-      <div className="particle particle-pink"></div>
-
-      {/* New floating elements */}
-      <div className="floating-element"></div>
-      <div className="floating-element"></div>
-      <div className="floating-element"></div>
-      <div className="floating-element"></div>
-
-      {/* Light beam effects */}
-      <div className="light-beam"></div>
-      <div className="light-beam"></div>
 
       <div className="home-container">
         <div className="home-intro">

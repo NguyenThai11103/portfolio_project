@@ -1,6 +1,6 @@
 .contact {
   padding: 6rem 2rem;
-  background-color: #f8f9fa;
+  background-color: var(--body-color);
 }
 
 .contact-container {
@@ -26,9 +26,9 @@
   align-items: flex-start;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: white;
+  background: var(--container-color);
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
 }
 
@@ -44,20 +44,20 @@
 
 .contact-text h3 {
   font-size: 1.2rem;
-  color: #2d3436;
+  color: var(--title-color);
   margin-bottom: 0.5rem;
 }
 
 .contact-text p {
-  color: #636e72;
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 .contact-form {
-  background: white;
+  background: var(--container-color);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
 .form-group {

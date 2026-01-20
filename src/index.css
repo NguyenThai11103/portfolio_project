@@ -7,7 +7,7 @@
   --title-color: #2d3436;
   --text-color: #636e72;
   --body-color: #f5f5f5;
-  --container-color: #f5f5f5;
+  --container-color: #ffffff;
 
   /* Font and Typography */
   --body-font:  "Be Vietnam Pro", sans-serif;
@@ -29,11 +29,21 @@
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Dark Theme */
+[data-theme="dark"] {
+  --title-color: #e8eaed;
+  --text-color: #b8bcc8;
+  --body-color: #0a0e27;
+  --container-color: #151a30;
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html {

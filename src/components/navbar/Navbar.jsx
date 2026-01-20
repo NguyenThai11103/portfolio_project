@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [activeNav, setActiveNav] = useState("#home");
+  const { theme, toggleTheme } = useTheme();
   const info = {
     name: "Nguyễn Thái",
     role: "Fullstack Developer",
@@ -91,6 +93,18 @@ const Navbar = () => {
             <i className="uil uil-times"></i>
           </div>
         </div>
+
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? (
+            <i className="uil uil-moon"></i>
+          ) : (
+            <i className="uil uil-sun"></i>
+          )}
+        </button>
 
         <div className="nav__social">
           {/* <a href="#" className="nav__social-link">

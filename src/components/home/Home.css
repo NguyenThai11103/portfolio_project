@@ -5,87 +5,28 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: #cae9f1;
-  background-image: radial-gradient(4px 100px at 0px 235px, #272257, #0000),
+  background: var(--body-color);
+  background-image: 
+    radial-gradient(4px 100px at 0px 235px, #272257, #0000),
     radial-gradient(4px 100px at 300px 235px, #272257, #0000),
     radial-gradient(1.5px 1.5px at 150px 117.5px, #272257 100%, #0000 150%),
     radial-gradient(4px 100px at 0px 252px, #272257, #0000),
     radial-gradient(4px 100px at 300px 252px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 126px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 150px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 150px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 75px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 253px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 253px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 126.5px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 204px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 204px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 102px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 134px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 134px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 67px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 179px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 179px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 89.5px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 299px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 299px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 149.5px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 215px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 215px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 107.5px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 281px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 281px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 140.5px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 158px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 158px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 79px, #272257 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 210px, #272257, #0000),
-    radial-gradient(4px 100px at 300px 210px, #272257, #0000),
-    radial-gradient(1.5px 1.5px at 150px 105px, #272257 100%, #0000 150%);
+    radial-gradient(1.5px 1.5px at 150px 126px, #272257 100%, #0000 150%);
   background-size:
     300px 235px,
     300px 235px,
     300px 235px,
     300px 252px,
     300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: rainAnimation 150s linear infinite;
+    300px 252px;
+  animation: rainAnimation 30s linear infinite;
   padding: 2rem;
   position: relative;
   overflow: hidden;
 }
 
-/* Rain animation keyframes */
+/* Rain animation keyframes - simplified */
 @keyframes rainAnimation {
   0% {
     background-position:
@@ -94,76 +35,16 @@
       151.5px 337.5px,
       25px 24px,
       28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
+      176.5px 150px;
   }
   to {
     background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
+      0px 1400px,
+      3px 1400px,
+      151.5px 1517.5px,
+      25px 2732px,
+      28px 2732px,
+      176.5px 2858px;
   }
 }
 
@@ -182,18 +63,7 @@
 .particle-blue { background: #4fc3f7; color: #4fc3f7; width: 14px; height: 14px; top: 12%; left: 10%; animation-duration: 7s; }
 .particle-pink { background: #ff6bcb; color: #ff6bcb; width: 18px; height: 18px; top: 60%; left: 80%; animation-duration: 9s; }
 .particle-yellow { background: #ffe066; color: #ffe066; width: 10px; height: 10px; top: 40%; left: 30%; animation-duration: 8s; }
-.particle-green { background: #63e6be; color: #63e6be; width: 16px; height: 16px; top: 70%; left: 20%; animation-duration: 10s; }
 .particle-purple { background: #b197fc; color: #b197fc; width: 12px; height: 12px; top: 30%; left: 70%; animation-duration: 11s; }
-.particle-orange { background: #ffb56b; color: #ffb56b; width: 20px; height: 20px; top: 80%; left: 40%; animation-duration: 12s; }
-
-/* Lặp lại vị trí cho các particle tiếp theo */
-.particle:nth-of-type(8) { top: 15%; left: 60%; }
-.particle:nth-of-type(9) { top: 55%; left: 15%; }
-.particle:nth-of-type(10) { top: 80%; left: 70%; }
-.particle:nth-of-type(11) { top: 25%; left: 80%; }
-.particle:nth-of-type(12) { top: 65%; left: 50%; }
-.particle:nth-of-type(13) { top: 45%; left: 85%; }
-.particle:nth-of-type(14) { top: 10%; left: 35%; }
 
 /* Animated gradient background */
 .gradient-bg {
@@ -235,76 +105,7 @@
   animation: pulse 8s ease-in-out infinite alternate;
 }
 
-/* New floating elements */
-.floating-element {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-  filter: blur(6px) brightness(1.3);
-  box-shadow: 0 0 32px 12px currentColor, 0 0 64px 24px currentColor;
-}
 
-.floating-element:nth-child(9) {
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 182, 193, 0.3);
-  top: 15%;
-  left: 25%;
-  animation: float3D 12s ease-in-out infinite;
-}
-
-.floating-element:nth-child(10) {
-  width: 15px;
-  height: 15px;
-  background: rgba(173, 216, 230, 0.3);
-  top: 75%;
-  left: 35%;
-  animation: float3D 15s ease-in-out infinite reverse;
-}
-
-.floating-element:nth-child(11) {
-  width: 25px;
-  height: 25px;
-  background: rgba(255, 218, 185, 0.3);
-  top: 45%;
-  left: 65%;
-  animation: float3D 10s ease-in-out infinite;
-}
-
-.floating-element:nth-child(12) {
-  width: 18px;
-  height: 18px;
-  background: rgba(221, 160, 221, 0.3);
-  top: 25%;
-  left: 85%;
-  animation: float3D 14s ease-in-out infinite reverse;
-}
-
-/* Light beam effect */
-.light-beam {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-  z-index: 0;
-  animation: moveBeam 15s linear infinite;
-  pointer-events: none;
-}
-
-.light-beam:nth-child(13) {
-  top: 10%;
-  left: 10%;
-  transform: rotate(30deg);
-}
-
-.light-beam:nth-child(14) {
-  top: 70%;
-  left: 80%;
-  transform: rotate(-45deg);
-  animation-delay: -7s;
-}
 
 /* New keyframes for added animations */
 @keyframes pulse {
@@ -322,41 +123,7 @@
   }
 }
 
-@keyframes float3D {
-  0% {
-    transform: translateY(0) translateX(0) translateZ(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-30px) translateX(15px) translateZ(20px) rotate(90deg);
-  }
-  50% {
-    transform: translateY(0) translateX(30px) translateZ(0) rotate(180deg);
-  }
-  75% {
-    transform: translateY(30px) translateX(15px) translateZ(-20px) rotate(270deg);
-  }
-  100% {
-    transform: translateY(0) translateX(0) translateZ(0) rotate(360deg);
-  }
-}
 
-@keyframes moveBeam {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(100px, 50px) rotate(90deg);
-  }
-  50% {
-    transform: translate(200px, 0) rotate(180deg);
-  }
-  75% {
-    transform: translate(100px, -50px) rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
-}
 
 @keyframes gradientShift {
   0% {
@@ -395,10 +162,10 @@
   position: relative;
   z-index: 1;
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--container-color);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 /* Left section - Introduction */
@@ -423,7 +190,7 @@
 
 .greeting {
   font-size: 1.5rem;
-  color: #636e72;
+  color: var(--text-color);
   font-weight: 400;
   animation: slideInLeft 0.4s ease-out 0.1s both;
   position: relative;
@@ -450,7 +217,7 @@
 .name {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #2d3436;
+  color: var(--title-color);
   margin: 0.5rem 0;
   animation: slideInRight 0.4s ease-out 0.2s both;
   position: relative;
@@ -502,7 +269,7 @@
 
 .home-description {
   font-size: 1.2rem;
-  color: #636e72;
+  color: var(--text-color);
   margin-bottom: 2rem;
   line-height: 1.6;
   animation: fadeIn 0.5s ease-out 0.4s both;
@@ -590,7 +357,7 @@
 }
 
 .social-link {
-  color: #2d3436;
+  color: var(--title-color);
   font-size: 1.5rem;
   transition: all 0.3s ease;
   position: relative;

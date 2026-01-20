@@ -1,6 +1,6 @@
 .about {
   padding: 6rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--body-color);
   position: relative;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #2d3436;
+  color: var(--title-color);
   margin-bottom: 3rem;
   position: relative;
   animation: fadeIn 0.8s ease-out;
@@ -191,7 +191,7 @@
 
 .about-subtitle {
   font-size: 2rem;
-  color: #2d3436;
+  color: var(--title-color);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -211,7 +211,7 @@
 .about-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #636e72;
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 
@@ -230,12 +230,12 @@
 
 .info-label {
   font-weight: 600;
-  color: #2d3436;
+  color: var(--title-color);
   min-width: 80px;
 }
 
 .info-value {
-  color: #636e72;
+  color: var(--text-color);
 }
 
 .skills {
@@ -244,7 +244,7 @@
 
 .skills h4 {
   font-size: 1.5rem;
-  color: #2d3436;
+  color: var(--title-color);
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
@@ -269,12 +269,12 @@
 }
 
 .skill-card {
-  background-color: #ffffff;
+  background-color: var(--container-color);
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
   animation: fadeIn 0.5s ease-out;
   animation-fill-mode: both;
   position: relative;
@@ -308,7 +308,7 @@
 .skill-name {
   font-size: 1rem;
   font-weight: 600;
-  color: #2d3436;
+  color: var(--title-color);
   transition: all 0.3s ease;
 }
 
@@ -405,7 +405,7 @@
 .stat {
   text-align: center;
   padding: 1.5rem;
-  background-color: #f8f9fa;
+  background-color: var(--container-color);
   border-radius: 10px;
   transition: all 0.3s ease;
   animation: fadeIn 0.5s ease-out;
@@ -432,7 +432,7 @@
 
 .stat-label {
   font-size: 1rem;
-  color: #636e72;
+  color: var(--text-color);
 }
 
 /* Animation keyframes */

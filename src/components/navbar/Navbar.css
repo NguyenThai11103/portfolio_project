@@ -113,6 +113,38 @@
   display: none;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(9, 132, 227, 0.1);
+  color: var(--title-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.theme-toggle:hover {
+  background: var(--first-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(20deg);
+}
+
+
 /* For medium devices */
 @media screen and (max-width: 968px) {
   .nav {
@@ -120,6 +152,10 @@
   }
 
   .nav__social {
+    display: none;
+  }
+
+  .theme-toggle {
     display: none;
   }
 }
