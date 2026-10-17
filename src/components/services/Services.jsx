@@ -1,53 +1,52 @@
-import React from 'react';
-import './Services.css';
+import { FiArrowUpRight, FiBriefcase, FiMapPin } from "react-icons/fi";
+import { profile } from "../../data/portfolioData";
+import { useLocale } from "../../context/LocaleContext";
+import "./Services.css";
 
 const Services = () => {
-  const services = [
-    {
-      icon: '💻',
-      title: 'Web Development',
-      description: 'Custom web applications built with modern technologies and best practices.'
-    },
-    {
-      icon: '🎨',
-      title: 'UI/UX Design',
-      description: 'Beautiful and intuitive user interfaces that enhance user experience.'
-    },
-    {
-      icon: '📱',
-      title: 'Mobile Development',
-      description: 'Cross-platform mobile applications using React Native and Flutter.'
-    },
-    {
-      icon: '🚀',
-      title: 'Performance Optimization',
-      description: 'Optimize your applications for speed, scalability, and efficiency.'
-    },
-    {
-      icon: '🔒',
-      title: 'Blockchain',
-      description: 'Development of decentralized applications and smart contracts on various blockchain platforms.'
-    },
-    {
-      icon: '🛠',
-      title: 'Maintenance',
-      description: 'Ongoing support and maintenance to keep your applications running smoothly.'
-    }
-  ];
+  const { content } = useLocale();
+  const copy = content.experience;
 
   return (
-    <section className="services" id="services">
-      <div className="services-container">
-        <h2 className="section-title">My Services</h2>
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <div className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
-          ))}
+    <section className="section experience" id="experience">
+      <div className="container">
+        <div className="section-heading" data-reveal>
+          <div>
+            <span className="section-kicker">{copy.kicker}</span>
+            <h2 className="section-title">{copy.title}</h2>
+          </div>
+          <p className="section-copy">
+            {copy.copy}
+          </p>
         </div>
+
+        <article className="experience-card" data-reveal="scale" data-reveal-delay="100">
+          <div className="experience-card__meta">
+            <span className="experience-card__icon"><FiBriefcase /></span>
+            <div>
+              <span className="mono-label">{copy.period}</span>
+              <h3>DZFullStack JSC</h3>
+              <p>{profile.title}</p>
+            </div>
+            <span className="experience-location"><FiMapPin /> {profile.location}</span>
+          </div>
+
+          <div className="experience-card__body">
+            <div className="experience-card__summary">
+              <span>{copy.currentRole}</span>
+              <strong>{copy.summary}</strong>
+              <FiArrowUpRight aria-hidden="true" />
+            </div>
+            <ol className="experience-list">
+              {copy.achievements.map((achievement, index) => (
+                <li key={achievement}>
+                  <span>0{index + 1}</span>
+                  <p>{achievement}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </article>
       </div>
     </section>
   );

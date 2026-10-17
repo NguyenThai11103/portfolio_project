@@ -1,35 +1,38 @@
-# 💫About Me :
-[![Portfolio](https://img.shields.io/badge/Portfolio-%23FF6B6B.svg?style=plastic&logo=web&logoColor=white)](https://nguyenthai11103.github.io/portfolio_project) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=plastic&logo=facebook&logoColor=white)](https://www.facebook.com/nguyen.thai.11302)
-# Xin chào! 👋 Tôi là Thái
+# Nguyễn Ngọc Duy Thái - Portfolio
 
-Chào mừng bạn đến với trang profile GitHub của tôi! Tôi là một Fullstack Developer.
+Portfolio cá nhân song ngữ Việt/Anh của Nguyễn Ngọc Duy Thái, Fullstack Developer tập trung vào Web Architecture và Blockchain/Web3. Nội dung nghề nghiệp được đồng bộ từ CV, còn danh mục dự án được tuyển chọn và đối chiếu trực tiếp từ các repository GitHub công khai.
 
-Tôi hiện đang tập trung vào việc xây dựng các ứng dụng web hiệu quả và thân thiện với người dùng, sử dụng các công nghệ hiện đại.
+## Công nghệ
 
-## 🛠️ Kỹ năng
+- React 19
+- Vite 8
+- Vitest + Testing Library
+- CSS thuần với responsive layout, light/dark theme và reduced-motion support
+- Locale context cho nội dung Việt/Anh, lưu lựa chọn vào local storage
+- Project grid compact gồm 6 sản phẩm có liên kết source/demo
+- GitHub Pages CI/CD
 
-Dưới đây là một số công nghệ và công cụ mà tôi đã làm việc qua:
+## Chạy local
 
-*   **Frontend:** React, VueJS, JavaScript, HTML5, CSS3
-*   **Backend:** PHP, SQL
-*   **Công cụ/Khác:** Git
+Yêu cầu Node.js 22.12 trở lên.
 
-## 📬 Liên hệ
+```bash
+npm install
+npm run dev
+```
 
-Hãy kết nối với tôi qua:
+## Kiểm tra
 
-*   **Email:** [kkdn011@gmail.com]
-*    **Phone:** [0775585746]
+```bash
+npm test
+npm run build
+npm audit
+```
 
-Cảm ơn bạn đã ghé thăm profile của tôi! Hãy cùng nhau xây dựng những điều tuyệt vời! ✨
+## Deploy
 
-# 💻Tech Stack
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=plastic&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=plastic&logo=javascript&logoColor=%23F7DF1E) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=plastic&logo=php&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=plastic&logo=typescript&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=plastic&logo=bootstrap&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=plastic&logo=vuedotjs&logoColor=%234FC08D) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=plastic&logo=tailwind-css&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=plastic&logo=laravel&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=plastic&logo=npm&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=plastic&logo=Canva&logoColor=white)
-# 📊GitHub Stats :
-![](https://github-readme-stats.vercel.app/api?username=NguyenThai11103&theme=radical&hide_border=true&include_all_commits=false&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=NguyenThai11103&theme=radical&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=NguyenThai11103&theme=radical&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
+Workflow GitHub Actions tại `.github/workflows/deploy.yml` tự động build thư mục `dist` và phát hành lên GitHub Pages khi có thay đổi trên nhánh `master`.
 
-### ✍️Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+Website: [nguyenthai11103.github.io/portfolio_project](https://nguyenthai11103.github.io/portfolio_project)
 
+GitHub: [github.com/nguyenthai11103](https://github.com/nguyenthai11103)

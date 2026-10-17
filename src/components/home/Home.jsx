@@ -1,74 +1,74 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
-
-import "./Home.css";
+import { FiArrowDownRight, FiArrowUpRight, FiGithub, FiGitlab, FiMail, FiMapPin } from "react-icons/fi";
 import avatar from "../../assets/images/ava.jpg";
+import { profile } from "../../data/portfolioData";
+import { useLocale } from "../../context/LocaleContext";
+import "./Home.css";
 
 const Home = () => {
+  const { content } = useLocale();
+  const copy = content.hero;
+
   return (
-    <section className="home">
-      {/* Background elements */}
-      <div className="gradient-bg"></div>
-      <div className="particle particle-blue"></div>
-      <div className="particle particle-pink"></div>
-      <div className="particle particle-yellow"></div>
-      <div className="particle particle-purple"></div>
+    <section className="hero" id="home">
+      <div className="hero-orbit hero-orbit--one" aria-hidden="true" />
+      <div className="hero-orbit hero-orbit--two" aria-hidden="true" />
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <div className="hero-eyebrow">
+            <span className="hero-status-dot" />
+            {profile.title} · {profile.specialty}
+          </div>
 
-      <div className="home-container">
-        <div className="home-intro">
-          <div className="home-content">
-            <div className="home-title">
-              <h2 className="greeting">Hello, I'm</h2>
-              <h1 className="name">Nguyễn Ngọc Duy Thái</h1>
-              <h2 className="role">Fullstack Developer</h2>
-            </div>
+          <h1>
+            {copy.titleLead}
+            <span>{copy.titleAccent}</span>
+          </h1>
 
-            <div className="home-buttons">
-              <Link to="/contact" className="btn primary-btn">
-                Contact Me
-              </Link>
-              <Link to="/projects" className="btn secondary-btn">
-                View Projects
-              </Link>
-            </div>
-            <ul class="example-1">
-              <li class="icon-content">
-                <a
-                  class="link"
-                  data-social="github"
-                  aria-label="Github"
-                  href=""
-                >
-                  <FaGithub />
-                </a>
-                <div class="tooltip">Github</div>
-              </li>
-              <li class="icon-content">
-                <a
-                  class="link"
-                  data-social="facebook"
-                  aria-label="Facebook"
-                  href="/"
-                >
-                  <FaFacebook />
-                </a>
-                <div class="tooltip">Facebook</div>
-              </li>
-            </ul>
+          <p className="hero-lead">
+            {copy.leadBefore} <strong>{profile.displayName}</strong>. {copy.leadAfter}
+          </p>
+
+          <div className="hero-actions">
+            <a className="button button--primary" href="#portfolio">
+              {copy.projectsCta} <FiArrowDownRight />
+            </a>
+            <a className="button button--outline" href={`mailto:${profile.email}`}>
+              {copy.contactCta} <FiMail />
+            </a>
+          </div>
+
+          <div className="hero-meta">
+            <span><FiMapPin /> {profile.location}</span>
+            <a href={profile.github} target="_blank" rel="noreferrer">
+              <FiGithub /> GitHub <FiArrowUpRight />
+            </a>
+            <a href={profile.gitlab} target="_blank" rel="noreferrer">
+              <FiGitlab /> GitLab <FiArrowUpRight />
+            </a>
           </div>
         </div>
-        <div className="home-visual">
-          <div className="profile-container">
-            <div className="profile-image">
-              <img src={avatar} alt="Profile" />
+
+        <div className="hero-visual">
+          <div className="hero-portrait-frame">
+            <div className="hero-portrait-accent" aria-hidden="true" />
+            <img src={avatar} alt={copy.portraitAlt} />
+            <div className="hero-code-card" aria-hidden="true">
+              <span>01 / ARCHITECT</span>
+              <strong>Web × Blockchain</strong>
+              <small>from API to on-chain proof</small>
             </div>
-            <div className="profile-decoration circle-1"></div>
-            <div className="profile-decoration circle-2"></div>
-            <div className="profile-decoration circle-3"></div>
           </div>
+          <div className="hero-signature" aria-hidden="true">Duy Thai</div>
         </div>
+      </div>
+
+      <div className="container hero-metrics" aria-label={copy.metricsLabel}>
+        {copy.metrics.map(([value, label]) => (
+          <div className="hero-metric" key={label}>
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

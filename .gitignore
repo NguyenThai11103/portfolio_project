@@ -10,6 +10,10 @@
 
 # production
 /build
+/dist
+
+# generated working files
+/tmp
 
 # misc
 .DS_Store
