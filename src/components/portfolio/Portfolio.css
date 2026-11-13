@@ -250,24 +250,46 @@
 }
 
 .project-repository-link {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.6rem;
   min-height: 48px;
+  overflow: hidden;
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--line);
   border-radius: 0.75rem;
   color: var(--muted);
   background: var(--surface);
+  isolation: isolate;
   transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-.project-repository-link:hover,
+.project-repository-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(110deg, transparent 20%, var(--accent-soft) 50%, transparent 80%);
+  pointer-events: none;
+  transform: translateX(-115%);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-repository-link > * {
+  position: relative;
+  z-index: 1;
+}
+
 .project-repository-link:focus-visible {
   border-color: var(--brand);
   color: var(--brand);
   transform: translateY(-2px);
+}
+
+.project-repository-link:focus-visible::before {
+  transform: translateX(115%);
 }
 
 .project-repository-icon {
@@ -279,6 +301,7 @@
   color: var(--brand);
   background: var(--accent-soft);
   font-size: 0.9rem;
+  transition: box-shadow 280ms ease, transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .project-repository-copy {
@@ -303,6 +326,82 @@
 
 .project-repository-link > svg:last-child {
   font-size: 0.82rem;
+  transition: transform 220ms ease;
+}
+
+.project-repository-link:focus-visible .project-repository-icon {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand) 12%, transparent);
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.project-repository-link:focus-visible > svg:last-child {
+  transform: translate(3px, -3px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-repository-link:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+    transform: translateY(-2px);
+  }
+
+  .project-repository-link:hover::before {
+    transform: translateX(115%);
+  }
+
+  .project-repository-link:hover .project-repository-icon {
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand) 12%, transparent);
+    transform: rotate(-8deg) scale(1.08);
+  }
+
+  .project-repository-link:hover > svg:last-child {
+    transform: translate(3px, -3px);
+  }
+}
+
+.motion-ready .project-card.is-revealed .project-repository-link {
+  animation: repository-link-in 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 160ms);
+}
+
+.motion-ready .project-card.is-revealed .project-repository-link:nth-child(2) {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 250ms);
+}
+
+@keyframes repository-link-in {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .project-card.is-revealed .project-repository-link {
+    animation: none;
+    opacity: 1;
+    translate: none;
+  }
+
+  .project-card:hover,
+  .project-repository-link:hover,
+  .project-repository-link:focus-visible,
+  .project-card:hover .project-visual img,
+  .project-card:hover .project-symbol > svg,
+  .project-repository-link:hover .project-repository-icon,
+  .project-repository-link:focus-visible .project-repository-icon,
+  .project-repository-link:hover > svg:last-child,
+  .project-repository-link:focus-visible > svg:last-child {
+    transform: none;
+  }
+
+  .project-repository-link::before {
+    display: none;
+  }
 }
 
 .project-subtitle {
