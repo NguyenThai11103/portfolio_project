@@ -4,6 +4,7 @@ import commerceHubRepoImage from "../assets/images/projects/commerce-hub-logo.pn
 import foodMarketImage from "../assets/images/projects/food-market.jpg";
 import cdioDeliveryImage from "../assets/images/projects/cdio-delivery.jpg";
 import cinemaApiImage from "../assets/images/projects/cinema-api.jpg";
+import eduBridgeArchitectureImage from "../assets/images/projects/edubridge-architecture.jpg";
 
 export const profile = {
   name: "Nguyen Ngoc Duy Thai",
@@ -49,6 +50,16 @@ const sharedProjects = {
     source: "https://github.com/NguyenThai11103/QLChiTieu",
     stack: ["Next.js", "TypeScript", "Laravel", "React Query", "Recharts", "MySQL"],
     icon: "chart",
+  },
+  eduBridgeTrace: {
+    id: "edu-bridge-trace",
+    title: "EDU-BRIDGE-TRACE",
+    source: "https://gitlab.com/ThanhTruong2311/blockchain_dtudz",
+    docs: "https://vietvo371.github.io/EduTraceBridge_docs/intro/",
+    platform: "gitlab",
+    image: eduBridgeArchitectureImage,
+    stack: ["Laravel", "Vue 3", "Solidity", "Ethereum", "IPFS", "Redis"],
+    icon: "book",
   },
 };
 
@@ -98,6 +109,15 @@ const sharedCourseProjects = {
     image: cinemaApiImage,
     stack: ["Laravel 12", "Sanctum", "Swagger", "MySQL", "REST API"],
     icon: "film",
+  },
+  coffeeOpsApi: {
+    id: "coffee-ops-api",
+    title: "COFFEE OPS API",
+    source: "https://gitlab.com/Kinghazard/k26_qlcaphe_be",
+    platform: "gitlab",
+    image: coffeeOpsImage,
+    stack: ["Laravel 12", "PHP 8.2", "MySQL", "Eloquent ORM", "REST API"],
+    icon: "coffee",
   },
 };
 
@@ -183,6 +203,7 @@ export const siteContent = {
       frontendSourceLabel: "Xem mã nguồn frontend",
       backendSourceLabel: "Xem mã nguồn backend",
       liveLabel: "Xem bản chạy",
+      docsLabel: "Xem tài liệu",
       featuredLabel: "Dự án nổi bật",
       featuredCopy: "Những sản phẩm có phạm vi lớn, bài toán rõ ràng và chiều sâu về kiến trúc hoặc trải nghiệm người dùng.",
       courseLabel: "Đồ án khóa học",
@@ -192,6 +213,7 @@ export const siteContent = {
         { ...sharedProjects.cityResQ, category: "Smart City · Microservices", subtitle: "Urban Incident Intelligence Platform", description: "Hệ thống web/mobile giúp người dân, cơ quan chức năng và AI phát hiện, phân loại và xử lý sự cố đô thị theo thời gian thực.", features: ["AI Vision & NLP", "NGSI-LD Open Data", "IoT event pipeline"] },
         { ...sharedProjects.familyTree, category: "Mobile · Fullstack", subtitle: "Family Heritage Management System", description: "Hệ thống quản lý gia phả đa nền tảng với thành viên, quan hệ, sự kiện, mộ phần, tài liệu, lời mời và QR tra cứu.", features: ["React Native app", "Role-based access", "Excel & QR workflows"] },
         { ...sharedProjects.moneyControl, category: "Fintech · Analytics", subtitle: "Personal Finance Management", description: "Ứng dụng quản lý giao dịch, danh mục, ngân sách, mục tiêu tiết kiệm, nhắc nhở và báo cáo tài chính trực quan.", features: ["Budget tracking", "Savings goals", "Financial reports"] },
+        { ...sharedProjects.eduBridgeTrace, category: "Blockchain · Education · VietChain 2025", subtitle: "Decentralized Credential & Recruitment Platform", description: "Nền tảng kết hợp Web2 và Web3 để phát hành, lưu trữ và xác minh hồ sơ học thuật, kết nối sinh viên, giảng viên, nhà trường và doanh nghiệp bằng dữ liệu có thể kiểm chứng.", features: ["Chứng chỉ NFT", "Xác minh on-chain", "Lưu trữ IPFS"] },
       ],
       courseProjects: [
         { ...sharedCourseProjects.coffeeOps, category: "Coursework · Operations", subtitle: "Cafe Operations Management", description: "Hệ thống fullstack vận hành quán cà phê, quản lý bàn, ca làm, nhân viên, nguyên liệu, công thức, nhà cung cấp, nhập kho và hóa đơn.", features: ["Kho & công thức", "Phân ca", "Bán hàng tại quầy"] },
@@ -199,6 +221,7 @@ export const siteContent = {
         { ...sharedCourseProjects.foodMarket, category: "Coursework · Marketplace", subtitle: "Food Delivery Marketplace", description: "Marketplace kết nối khách hàng, quán ăn, shipper và quản trị viên; hỗ trợ đặt món, voucher, vị trí giao hàng và thống kê doanh thu.", features: ["Luồng 4 vai trò", "Bản đồ giao hàng", "Thống kê doanh thu"] },
         { ...sharedCourseProjects.cdioDelivery, category: "Coursework · CDIO", subtitle: "Restaurant Ordering & Delivery", description: "Đồ án CDIO mô phỏng quy trình đặt và giao món giữa khách hàng, quán ăn, shipper và quản trị viên, kèm xác thực và báo cáo vận hành.", features: ["Đặt & giao món", "Quản lý nhà hàng", "Google sign-in"] },
         { ...sharedCourseProjects.cinemaApi, category: "Coursework · Backend API", subtitle: "Cinema Booking & Operations API", description: "Backend quản lý rạp phim với phim, phòng chiếu, suất chiếu, ghế, vé, đơn hàng, voucher, dịch vụ, phân quyền và thống kê vận hành.", features: ["Đặt vé & ghế", "Phân quyền", "Swagger API docs"] },
+        { ...sharedCourseProjects.coffeeOpsApi, category: "Coursework · Backend API", subtitle: "Cafe Operations REST API", description: "Backend REST API cho hệ thống quản lý quán cà phê, tổ chức dữ liệu và nghiệp vụ CRUD cho bàn, ca làm, nhân viên, kho nguyên liệu, sản phẩm, hóa đơn, voucher và thanh toán.", features: ["Bàn, ca làm & nhân viên", "Kho & nhà cung cấp", "Hóa đơn & thanh toán"] },
       ],
     },
     credentials: {
@@ -313,6 +336,7 @@ export const siteContent = {
       frontendSourceLabel: "View frontend source",
       backendSourceLabel: "View backend source",
       liveLabel: "View live site",
+      docsLabel: "View documentation",
       featuredLabel: "Featured projects",
       featuredCopy: "Larger-scope products with a clear problem statement and meaningful depth in architecture or user experience.",
       courseLabel: "Coursework projects",
@@ -322,6 +346,7 @@ export const siteContent = {
         { ...sharedProjects.cityResQ, category: "Smart City · Microservices", subtitle: "Urban Incident Intelligence Platform", description: "A web and mobile system where citizens, authorities and AI detect, classify and resolve urban incidents in real time.", features: ["AI Vision & NLP", "NGSI-LD Open Data", "IoT event pipeline"] },
         { ...sharedProjects.familyTree, category: "Mobile · Fullstack", subtitle: "Family Heritage Management System", description: "A cross-platform genealogy system covering members, relationships, events, graves, documents, invitations and QR lookup.", features: ["React Native app", "Role-based access", "Excel & QR workflows"] },
         { ...sharedProjects.moneyControl, category: "Fintech · Analytics", subtitle: "Personal Finance Management", description: "A personal finance app for transactions, categories, budgets, savings goals, reminders and visual reports.", features: ["Budget tracking", "Savings goals", "Financial reports"] },
+        { ...sharedProjects.eduBridgeTrace, category: "Blockchain · Education · VietChain 2025", subtitle: "Decentralized Credential & Recruitment Platform", description: "A Web2 and Web3 platform for issuing, storing and verifying academic records while connecting students, lecturers, institutions and employers through verifiable data.", features: ["NFT credentials", "On-chain verification", "IPFS storage"] },
       ],
       courseProjects: [
         { ...sharedCourseProjects.coffeeOps, category: "Coursework · Operations", subtitle: "Cafe Operations Management", description: "A full-stack cafe operations system covering tables, shifts, staff, ingredients, recipes, suppliers, stock intake and invoices.", features: ["Inventory & recipes", "Shift scheduling", "Point-of-sale"] },
@@ -329,6 +354,7 @@ export const siteContent = {
         { ...sharedCourseProjects.foodMarket, category: "Coursework · Marketplace", subtitle: "Food Delivery Marketplace", description: "A marketplace connecting customers, restaurants, couriers and administrators with ordering, vouchers, delivery locations and revenue analytics.", features: ["Four-role workflow", "Map-based delivery", "Revenue analytics"] },
         { ...sharedCourseProjects.cdioDelivery, category: "Coursework · CDIO", subtitle: "Restaurant Ordering & Delivery", description: "A CDIO project modelling restaurant ordering and delivery across customer, restaurant, courier and admin roles, with authentication and operations reporting.", features: ["Order & delivery", "Restaurant management", "Google sign-in"] },
         { ...sharedCourseProjects.cinemaApi, category: "Coursework · Backend API", subtitle: "Cinema Booking & Operations API", description: "A cinema backend covering movies, screening rooms, showtimes, seats, tickets, orders, vouchers, services, role-based access and operations analytics.", features: ["Ticket & seat booking", "Role-based access", "Swagger API docs"] },
+        { ...sharedCourseProjects.coffeeOpsApi, category: "Coursework · Backend API", subtitle: "Cafe Operations REST API", description: "A REST backend for cafe operations, organizing CRUD workflows for tables, shifts, staff, inventory ingredients, products, invoices, vouchers and payments.", features: ["Tables, shifts & staff", "Inventory & suppliers", "Invoices & payments"] },
       ],
     },
     credentials: {

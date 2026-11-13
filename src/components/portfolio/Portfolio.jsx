@@ -2,6 +2,7 @@ import {
   FiActivity,
   FiArrowUpRight,
   FiBarChart2,
+  FiBookOpen,
   FiCoffee,
   FiFilm,
   FiGithub,
@@ -17,6 +18,7 @@ import "./Portfolio.css";
 
 const projectIcons = {
   activity: <FiActivity />,
+  book: <FiBookOpen />,
   chart: <FiBarChart2 />,
   coffee: <FiCoffee />,
   film: <FiFilm />,
@@ -100,6 +102,11 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
                 <span className="project-link-label">BE</span>
               </a>
             )}
+            {project.docs && (
+              <a href={project.docs} target="_blank" rel="noreferrer" aria-label={`${copy.docsLabel}: ${project.title}`} title={copy.docsLabel}>
+                <FiBookOpen />
+              </a>
+            )}
             {project.live && (
               <a href={project.live} target="_blank" rel="noreferrer" aria-label={`${copy.liveLabel}: ${project.title}`} title={copy.liveLabel}>
                 <FiArrowUpRight />
@@ -156,7 +163,7 @@ const Portfolio = () => {
             <h3>{copy.featuredLabel}</h3>
             <p>{copy.featuredCopy}</p>
           </div>
-          <div className="project-grid">
+          <div className="project-grid project-grid--featured">
             {copy.projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} copy={copy} language={language} />
             ))}

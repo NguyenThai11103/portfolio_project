@@ -36,14 +36,17 @@
 }
 
 @media (min-width: 1101px) {
+  .project-grid--featured,
   .project-grid--compact {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .project-grid--featured > .project-card,
   .project-grid--compact > .project-card {
     grid-column: span 2;
   }
 
+  .project-grid--featured > .project-card:nth-last-child(2):nth-child(3n + 1),
   .project-grid--compact > .project-card:nth-last-child(2):nth-child(3n + 1) {
     grid-column: 2 / span 2;
   }
