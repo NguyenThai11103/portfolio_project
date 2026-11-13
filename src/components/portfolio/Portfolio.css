@@ -60,11 +60,31 @@
 .project-card--compact .project-symbol::before {
   width: 118px;
   height: 118px;
+  border-color: rgba(255, 255, 255, 0.2);
+  animation: project-ring-breathe 3.8s ease-in-out infinite;
+  animation-delay: var(--project-motion-delay, 0s);
 }
 
 .project-card--compact .project-symbol::after {
   width: 72px;
   height: 72px;
+  border-color: rgba(255, 255, 255, 0.24);
+  animation: project-ring-breathe 3.8s ease-in-out infinite reverse;
+  animation-delay: calc(var(--project-motion-delay, 0s) - 1.4s);
+}
+
+.project-card--compact .project-symbol > svg {
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.28));
+  animation: project-icon-float 2.8s ease-in-out infinite;
+  animation-delay: var(--project-motion-delay, 0s);
+}
+
+.project-grid--compact > .project-card:nth-child(2n) {
+  --project-motion-delay: -0.85s;
+}
+
+.project-grid--compact > .project-card:nth-child(3n) {
+  --project-motion-delay: -1.7s;
 }
 
 .project-card--compact .project-content {
@@ -380,8 +400,40 @@
   }
 }
 
+@keyframes project-icon-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes project-ring-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .motion-ready .project-card.is-revealed .project-repository-link {
+    animation: none;
+    opacity: 1;
+    translate: none;
+  }
+
+  .project-card--compact .project-symbol::before,
+  .project-card--compact .project-symbol::after,
+  .project-card--compact .project-symbol > svg {
     animation: none;
     opacity: 1;
     translate: none;
