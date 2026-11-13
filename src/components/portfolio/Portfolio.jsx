@@ -27,6 +27,31 @@ const projectIcons = {
   users: <FiUsers />,
 };
 
+const formatRepositoryUrl = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
+const RepositoryLink = ({ href, label, title }) => {
+  const isGitLab = href.includes("gitlab.com");
+
+  return (
+    <a
+      className="project-repository-link"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`${label}: ${title}`}
+    >
+      <span className="project-repository-icon" aria-hidden="true">
+        {isGitLab ? <FiGitlab /> : <FiGithub />}
+      </span>
+      <span className="project-repository-copy">
+        <strong>{label}</strong>
+        <span>{formatRepositoryUrl(href)}</span>
+      </span>
+      <FiArrowUpRight aria-hidden="true" />
+    </a>
+  );
+};
+
 const ProjectCard = ({ project, index, copy, language, compact = false }) => (
   <article
     className={`project-card${compact ? " project-card--compact" : ""}`}
@@ -51,21 +76,23 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
           <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
           <h3>{project.title}</h3>
         </div>
-        <div className="project-links">
-          <a href={project.source} target="_blank" rel="noreferrer" aria-label={`${project.backendSource ? copy.frontendSourceLabel : copy.sourceLabel}: ${project.title}`} title={project.backendSource ? copy.frontendSourceLabel : copy.sourceLabel}>
-            {project.backendSource ? <span className="project-link-label">FE</span> : project.platform === "gitlab" ? <FiGitlab /> : <FiGithub />}
-          </a>
-          {project.backendSource && (
-            <a href={project.backendSource} target="_blank" rel="noreferrer" aria-label={`${copy.backendSourceLabel}: ${project.title}`} title={copy.backendSourceLabel}>
-              <span className="project-link-label">BE</span>
+        {!compact && (
+          <div className="project-links">
+            <a href={project.source} target="_blank" rel="noreferrer" aria-label={`${project.backendSource ? copy.frontendSourceLabel : copy.sourceLabel}: ${project.title}`} title={project.backendSource ? copy.frontendSourceLabel : copy.sourceLabel}>
+              {project.backendSource ? <span className="project-link-label">FE</span> : project.platform === "gitlab" ? <FiGitlab /> : <FiGithub />}
             </a>
-          )}
-          {project.live && (
-            <a href={project.live} target="_blank" rel="noreferrer" aria-label={`${copy.liveLabel}: ${project.title}`} title={copy.liveLabel}>
-              <FiArrowUpRight />
-            </a>
-          )}
-        </div>
+            {project.backendSource && (
+              <a href={project.backendSource} target="_blank" rel="noreferrer" aria-label={`${copy.backendSourceLabel}: ${project.title}`} title={copy.backendSourceLabel}>
+                <span className="project-link-label">BE</span>
+              </a>
+            )}
+            {project.live && (
+              <a href={project.live} target="_blank" rel="noreferrer" aria-label={`${copy.liveLabel}: ${project.title}`} title={copy.liveLabel}>
+                <FiArrowUpRight />
+              </a>
+            )}
+          </div>
+        )}
       </div>
 
       <p className="project-subtitle">{project.subtitle}</p>
@@ -78,6 +105,19 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
       <ul className="project-stack" aria-label={`${language === "vi" ? "Công nghệ sử dụng trong" : "Technologies used in"} ${project.title}`}>
         {project.stack.slice(0, 5).map((technology) => <li key={technology}>{technology}</li>)}
       </ul>
+
+      {compact && (
+        <div className="project-repositories">
+          <RepositoryLink
+            href={project.source}
+            label={project.backendSource ? copy.frontendSourceLabel : copy.sourceLabel}
+            title={project.title}
+          />
+          {project.backendSource && (
+            <RepositoryLink href={project.backendSource} label={copy.backendSourceLabel} title={project.title} />
+          )}
+        </div>
+      )}
     </div>
   </article>
 );

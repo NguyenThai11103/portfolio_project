@@ -243,6 +243,68 @@
   font-weight: 700;
 }
 
+.project-repositories {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.project-repository-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  color: var(--muted);
+  background: var(--surface);
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.project-repository-link:hover,
+.project-repository-link:focus-visible {
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.project-repository-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--brand);
+  background: var(--accent-soft);
+  font-size: 0.9rem;
+}
+
+.project-repository-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.08rem;
+}
+
+.project-repository-copy strong {
+  color: var(--ink);
+  font-size: 0.65rem;
+}
+
+.project-repository-copy span {
+  overflow: hidden;
+  color: var(--subtle);
+  font-family: "DM Mono", monospace;
+  font-size: 0.53rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-repository-link > svg:last-child {
+  font-size: 0.82rem;
+}
+
 .project-subtitle {
   margin-top: 0.7rem;
   color: var(--brand);
