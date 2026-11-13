@@ -8,10 +8,10 @@
   gap: clamp(2rem, 6vw, 6rem);
   padding: clamp(2rem, 6vw, 5rem);
   border-radius: var(--radius-lg);
-  color: #e8f4f1;
+  color: #eaf2ff;
   background:
-    radial-gradient(circle at 12% 16%, rgba(101, 201, 195, 0.18), transparent 30%),
-    #071c1d;
+    radial-gradient(circle at 12% 16%, rgba(139, 184, 255, 0.2), transparent 30%),
+    #08152c;
   box-shadow: var(--shadow-lg);
 }
 
@@ -29,7 +29,7 @@
 
 .contact-intro > p {
   max-width: 620px;
-  color: #aabfbc;
+  color: #aabbd5;
 }
 
 .contact-direct {
@@ -45,7 +45,7 @@
   gap: 0.9rem;
   width: 100%;
   padding: 0.75rem 0;
-  color: #e8f4f1;
+  color: #eaf2ff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   text-align: left;
 }
@@ -65,7 +65,7 @@
 }
 
 .contact-direct small {
-  color: #7f9996;
+  color: #8095b5;
   font-size: 0.68rem;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .contact-form label > span {
-  color: #b8c9c6;
+  color: #b8c7dc;
   font-size: 0.72rem;
   font-weight: 700;
 }
@@ -114,7 +114,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   outline: 0;
-  color: #f0f8f6;
+  color: #f2f7ff;
   background: rgba(255, 255, 255, 0.055);
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -131,7 +131,7 @@
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #6f8885;
+  color: #7187a8;
 }
 
 .contact-form input:focus,
@@ -143,13 +143,13 @@
 .contact-submit {
   width: 100%;
   margin-top: 0.35rem;
-  color: #071314;
+  color: #071426;
   background: var(--accent);
 }
 
 .contact-form__note {
   margin-top: 0.85rem;
-  color: #76918d;
+  color: #778caf;
   font-size: 0.63rem;
   line-height: 1.5;
   text-align: center;

@@ -1,22 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --bg: #f4f4ef;
-  --bg-elevated: #fbfbf7;
-  --surface: rgba(255, 255, 251, 0.82);
+  --bg: #f6f8fc;
+  --bg-elevated: #ffffff;
+  --surface: rgba(255, 255, 255, 0.86);
   --surface-solid: #ffffff;
-  --ink: #102a2b;
-  --muted: #5f7474;
-  --subtle: #879696;
-  --line: rgba(16, 42, 43, 0.14);
-  --line-strong: rgba(16, 42, 43, 0.24);
-  --brand: #0d6868;
-  --brand-deep: #084949;
+  --ink: #12213b;
+  --muted: #52657f;
+  --subtle: #5e718d;
+  --line: rgba(18, 33, 59, 0.14);
+  --line-strong: rgba(18, 33, 59, 0.24);
+  --brand: #0b57d0;
+  --brand-deep: #0842a0;
   --accent: #f1b86b;
   --accent-soft: rgba(241, 184, 107, 0.18);
   --success: #1f8b67;
-  --shadow-sm: 0 12px 30px rgba(26, 50, 50, 0.07);
-  --shadow-lg: 0 30px 80px rgba(26, 50, 50, 0.12);
+  --shadow-sm: 0 12px 30px rgba(30, 64, 175, 0.08);
+  --shadow-lg: 0 30px 80px rgba(30, 64, 175, 0.14);
   --radius-sm: 14px;
   --radius-md: 22px;
   --radius-lg: 36px;
@@ -25,17 +25,17 @@
 }
 
 [data-theme="dark"] {
-  --bg: #071314;
-  --bg-elevated: #0b1a1b;
-  --surface: rgba(14, 32, 33, 0.86);
-  --surface-solid: #102426;
-  --ink: #ecf5f2;
-  --muted: #aec0bd;
-  --subtle: #7f9693;
-  --line: rgba(214, 235, 230, 0.12);
-  --line-strong: rgba(214, 235, 230, 0.22);
-  --brand: #65c9c3;
-  --brand-deep: #92ded9;
+  --bg: #08152c;
+  --bg-elevated: #0d1e3a;
+  --surface: rgba(16, 35, 63, 0.88);
+  --surface-solid: #122746;
+  --ink: #f1f6ff;
+  --muted: #b4c3da;
+  --subtle: #8495b2;
+  --line: rgba(220, 232, 252, 0.13);
+  --line-strong: rgba(220, 232, 252, 0.24);
+  --brand: #8bb8ff;
+  --brand-deep: #b9d3ff;
   --accent: #f2bd76;
   --accent-soft: rgba(242, 189, 118, 0.12);
   --success: #68c7a6;
@@ -65,7 +65,7 @@ body {
   min-width: 320px;
   color: var(--ink);
   background:
-    radial-gradient(circle at 5% 10%, rgba(73, 163, 157, 0.12), transparent 28rem),
+    radial-gradient(circle at 5% 10%, rgba(11, 87, 208, 0.14), transparent 28rem),
     radial-gradient(circle at 95% 30%, var(--accent-soft), transparent 26rem),
     var(--bg);
   line-height: 1.7;
@@ -87,7 +87,7 @@ body::before {
 }
 
 ::selection {
-  color: #071314;
+  color: #071426;
   background: var(--accent);
 }
 
@@ -238,11 +238,11 @@ ul {
 .button--primary {
   color: #f9ffff;
   background: var(--brand-deep);
-  box-shadow: 0 12px 32px rgba(8, 73, 73, 0.2);
+  box-shadow: 0 12px 32px rgba(8, 66, 160, 0.25);
 }
 
 [data-theme="dark"] .button--primary {
-  color: #071314;
+  color: #071426;
   background: var(--brand);
 }
 

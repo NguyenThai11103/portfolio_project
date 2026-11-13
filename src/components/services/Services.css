@@ -21,7 +21,7 @@
   height: 58px;
   place-items: center;
   border-radius: var(--radius-sm);
-  color: #071314;
+  color: #071426;
   background: var(--accent);
   font-size: 1.35rem;
 }
@@ -58,12 +58,12 @@
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(1.75rem, 4vw, 3rem);
-  color: #e8f4f1;
+  color: #eaf2ff;
   background: var(--brand-deep);
 }
 
 [data-theme="dark"] .experience-card__summary {
-  color: #071314;
+  color: #071426;
   background: var(--brand);
 }
 

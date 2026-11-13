@@ -118,14 +118,14 @@
   height: 168px;
   flex: 0 0 auto;
   overflow: hidden;
-  background: #0b2425;
+  background: #0b2343;
 }
 
 .project-visual::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(3, 18, 19, 0.5), transparent 65%);
+  background: linear-gradient(to top, rgba(3, 13, 31, 0.58), transparent 65%);
   pointer-events: none;
 }
 
@@ -149,8 +149,8 @@
   padding: 0.35rem 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
-  color: #f4fbf9;
-  background: rgba(6, 25, 26, 0.78);
+  color: #f4f8ff;
+  background: rgba(7, 22, 45, 0.82);
   font-family: "DM Mono", monospace;
   font-size: 0.58rem;
   letter-spacing: 0.04em;
@@ -162,10 +162,10 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: #ecf7f4;
+  color: #edf5ff;
   background:
     radial-gradient(circle at 78% 22%, rgba(241, 184, 107, 0.34), transparent 24%),
-    linear-gradient(135deg, #0a3132, #061a1b);
+    linear-gradient(135deg, #0c3262, #07182f);
 }
 
 .project-symbol::before,

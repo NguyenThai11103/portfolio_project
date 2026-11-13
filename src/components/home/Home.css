@@ -152,15 +152,15 @@
   padding: 1rem 1.15rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
-  color: #e8f3f1;
-  background: rgba(7, 27, 28, 0.9);
+  color: #eaf2ff;
+  background: rgba(8, 21, 44, 0.94);
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(16px);
 }
 
 .hero-code-card span,
 .hero-code-card small {
-  color: #9eb9b6;
+  color: #9db2d1;
   font-family: "DM Mono", monospace;
   font-size: 0.64rem;
 }
