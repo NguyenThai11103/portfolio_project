@@ -60,7 +60,12 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
   >
     <div className={`project-visual project-visual--${project.icon}`}>
       {project.image ? (
-        <img src={project.image} alt={`${language === "vi" ? "Ảnh dự án" : "Project preview"} ${project.title}`} />
+        <img
+          src={project.image}
+          alt={`${language === "vi" ? "Ảnh dự án" : "Project preview"} ${project.title}`}
+          loading="lazy"
+          decoding="async"
+        />
       ) : (
         <div className="project-symbol" aria-hidden="true">
           {projectIcons[project.icon]}

@@ -54,7 +54,8 @@
 }
 
 .project-card--compact .project-visual {
-  height: 128px;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .project-card--compact .project-symbol::before {

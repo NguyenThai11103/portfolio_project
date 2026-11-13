@@ -1,3 +1,9 @@
+import coffeeOpsImage from "../assets/images/projects/coffee-ops.jpg";
+import commerceHubImage from "../assets/images/projects/commerce-hub.jpg";
+import foodMarketImage from "../assets/images/projects/food-market.jpg";
+import cdioDeliveryImage from "../assets/images/projects/cdio-delivery.jpg";
+import cinemaApiImage from "../assets/images/projects/cinema-api.jpg";
+
 export const profile = {
   name: "Nguyen Ngoc Duy Thai",
   displayName: "Nguyễn Ngọc Duy Thái",
@@ -51,6 +57,7 @@ const sharedCourseProjects = {
     title: "COFFEE OPS",
     source: "https://github.com/NguyenThai11103/K26_QLCaPhe_FE",
     backendSource: "https://gitlab.com/Kinghazard/k26_qlcaphe_be",
+    image: coffeeOpsImage,
     stack: ["Vue 3", "Vite", "Axios", "Bootstrap", "Vue Router"],
     icon: "coffee",
   },
@@ -59,6 +66,7 @@ const sharedCourseProjects = {
     title: "COMMERCE HUB",
     source: "https://github.com/NguyenThai11103/TMDT_FE",
     backendSource: "https://github.com/NguyenThai11103/TMDT_BE",
+    image: commerceHubImage,
     stack: ["Vue 3", "Laravel", "Sanctum", "Laravel Echo", "Chart.js"],
     icon: "shopping",
   },
@@ -67,6 +75,7 @@ const sharedCourseProjects = {
     title: "FOOD MARKET",
     source: "https://github.com/NguyenThai11103/ShoppeFake_FE",
     backendSource: "https://github.com/NguyenThai11103/ShoppeFake_BE",
+    image: foodMarketImage,
     stack: ["Vue 3", "Laravel", "Sanctum", "Leaflet", "Chart.js"],
     icon: "truck",
   },
@@ -75,6 +84,7 @@ const sharedCourseProjects = {
     title: "CDIO DELIVERY",
     source: "https://github.com/NguyenThai11103/CDIO_FE_NEW",
     backendSource: "https://github.com/NguyenThai11103/CDIO_BE_NEW",
+    image: cdioDeliveryImage,
     stack: ["Vue 3", "Laravel", "Sanctum", "Google OAuth", "Vue Chart.js"],
     icon: "package",
   },
@@ -83,6 +93,7 @@ const sharedCourseProjects = {
     title: "CINEMA API",
     source: "https://gitlab.com/Kinghazard/k24_api",
     platform: "gitlab",
+    image: cinemaApiImage,
     stack: ["Laravel 12", "Sanctum", "Swagger", "MySQL", "REST API"],
     icon: "film",
   },

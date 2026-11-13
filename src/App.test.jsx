@@ -27,6 +27,11 @@ test("renders GitHub-backed projects and switches the full page to English", () 
   expect(screen.getByRole("heading", { name: "FOOD MARKET" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "CDIO DELIVERY" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "CINEMA API" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Ảnh dự án COFFEE OPS" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Ảnh dự án COMMERCE HUB" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Ảnh dự án FOOD MARKET" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Ảnh dự án CDIO DELIVERY" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Ảnh dự án CINEMA API" })).toBeInTheDocument();
   expect(screen.getByRole("link", { name: "Xem mã nguồn frontend: COFFEE OPS" })).toHaveAttribute("href", "https://github.com/NguyenThai11103/K26_QLCaPhe_FE");
   expect(screen.getByRole("link", { name: "Xem mã nguồn backend: COFFEE OPS" })).toHaveAttribute("href", "https://gitlab.com/Kinghazard/k26_qlcaphe_be");
   expect(screen.getByText("github.com/NguyenThai11103/K26_QLCaPhe_FE")).toBeVisible();
