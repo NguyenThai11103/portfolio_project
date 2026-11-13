@@ -1,5 +1,6 @@
 import coffeeOpsImage from "../assets/images/projects/coffee-ops.jpg";
 import commerceHubImage from "../assets/images/projects/commerce-hub.jpg";
+import commerceHubRepoImage from "../assets/images/projects/commerce-hub-logo.png";
 import foodMarketImage from "../assets/images/projects/food-market.jpg";
 import cdioDeliveryImage from "../assets/images/projects/cdio-delivery.jpg";
 import cinemaApiImage from "../assets/images/projects/cinema-api.jpg";
@@ -67,6 +68,7 @@ const sharedCourseProjects = {
     source: "https://github.com/NguyenThai11103/TMDT_FE",
     backendSource: "https://github.com/NguyenThai11103/TMDT_BE",
     image: commerceHubImage,
+    repoImage: commerceHubRepoImage,
     stack: ["Vue 3", "Laravel", "Sanctum", "Laravel Echo", "Chart.js"],
     icon: "shopping",
   },

@@ -142,6 +142,28 @@
   transform: scale(1.045);
 }
 
+.project-visual > .project-repo-image {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  width: 88px;
+  height: 88px;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 1rem;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 30px rgba(3, 13, 31, 0.24);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.project-card:hover .project-visual > .project-repo-image {
+  box-shadow: 0 16px 36px rgba(3, 13, 31, 0.3);
+  transform: translateY(-3px) scale(1.03);
+}
+
 .project-category {
   position: absolute;
   bottom: 0.85rem;

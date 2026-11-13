@@ -29,6 +29,7 @@ test("renders GitHub-backed projects and switches the full page to English", () 
   expect(screen.getByRole("heading", { name: "CINEMA API" })).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Ảnh dự án COFFEE OPS" })).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Ảnh dự án COMMERCE HUB" })).toBeInTheDocument();
+  expect(screen.getByRole("img", { name: "Logo gốc COMMERCE HUB" })).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Ảnh dự án FOOD MARKET" })).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Ảnh dự án CDIO DELIVERY" })).toBeInTheDocument();
   expect(screen.getByRole("img", { name: "Ảnh dự án CINEMA API" })).toBeInTheDocument();

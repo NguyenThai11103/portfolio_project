@@ -72,6 +72,15 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
           <span>{String(index + 1).padStart(2, "0")}</span>
         </div>
       )}
+      {project.repoImage && (
+        <img
+          className="project-repo-image"
+          src={project.repoImage}
+          alt={`${language === "vi" ? "Logo gốc" : "Original logo"} ${project.title}`}
+          loading="lazy"
+          decoding="async"
+        />
+      )}
       <span className="project-category">{project.category}</span>
     </div>
 
