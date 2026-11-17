@@ -109,6 +109,7 @@
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -124,6 +125,24 @@
   padding: 0 1rem;
 }
 
+.contact-form select {
+  min-height: 50px;
+  padding: 0 1rem;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #8da0bd 50%),
+    linear-gradient(135deg, #8da0bd 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 21px,
+    calc(100% - 13px) 21px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+}
+
+.contact-form select option {
+  color: #10233f;
+}
+
 .contact-form textarea {
   padding: 0.9rem 1rem;
   resize: vertical;
@@ -135,9 +154,28 @@
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(241, 184, 107, 0.12);
+}
+
+.contact-form input:disabled,
+.contact-form select:disabled,
+.contact-form textarea:disabled,
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.64;
+}
+
+.contact-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .contact-submit {
@@ -153,6 +191,51 @@
   font-size: 0.63rem;
   line-height: 1.5;
   text-align: center;
+}
+
+.contact-form__status {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-form__status svg {
+  flex: 0 0 auto;
+  margin-top: 0.18rem;
+}
+
+.contact-form__status > span {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-form__reference {
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.contact-form__status--success {
+  color: #9ee5c9;
+  background: rgba(67, 170, 128, 0.12);
+}
+
+.contact-form__status--activation {
+  color: #f3cc93;
+  background: rgba(241, 184, 107, 0.1);
+}
+
+.contact-form__status--error {
+  color: #ffb7b7;
+  background: rgba(207, 74, 74, 0.12);
 }
 
 .site-footer {

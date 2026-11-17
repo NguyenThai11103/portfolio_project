@@ -6,8 +6,11 @@ import "./Contact.css";
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
+  const [submitState, setSubmitState] = useState("idle");
+  const [referenceCode, setReferenceCode] = useState("");
   const { content, language } = useLocale();
   const copy = content.contact;
+  const isSending = submitState === "sending";
 
   const copyEmail = async () => {
     try {
@@ -19,15 +22,59 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const name = data.get("name");
     const sender = data.get("email");
+    const topic = data.get("topic");
     const message = data.get("message");
-    const subject = encodeURIComponent(`${language === "vi" ? "Trao đổi dự án từ" : "Portfolio inquiry from"} ${name}`);
-    const body = encodeURIComponent(`${message}\n\n${language === "vi" ? "Từ" : "From"}: ${name}\nEmail: ${sender}`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    const submissionReference = `PORT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+
+    setSubmitState("sending");
+    setReferenceCode("");
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email: sender,
+          topic,
+          message,
+          reference: submissionReference,
+          _replyto: sender,
+          _subject: `[${topic}] ${language === "vi" ? "Trao đổi từ" : "Inquiry from"} ${name}`,
+          _template: "table",
+          _honey: data.get("_honey") || "",
+          _url: `${window.location.origin}${window.location.pathname}`,
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      const resultMessage = String(result.message || "");
+      const requiresActivation = /activat|confirm|verify/i.test(resultMessage);
+
+      if (requiresActivation) {
+        setSubmitState("activation");
+        form.reset();
+        return;
+      }
+
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(resultMessage || "Form submission failed");
+      }
+
+      setSubmitState("success");
+      setReferenceCode(submissionReference);
+      form.reset();
+    } catch {
+      setSubmitState("error");
+    }
   };
 
   return (
@@ -65,22 +112,42 @@ const Contact = () => {
 
             <label>
               <span>{copy.name}</span>
-              <input name="name" type="text" placeholder={copy.namePlaceholder} autoComplete="name" required />
+              <input name="name" type="text" placeholder={copy.namePlaceholder} autoComplete="name" minLength="2" maxLength="80" disabled={isSending} required />
             </label>
 
             <label>
               <span>Email</span>
-              <input name="email" type="email" placeholder="you@company.com" autoComplete="email" required />
+              <input name="email" type="email" placeholder="you@company.com" autoComplete="email" maxLength="120" disabled={isSending} required />
+            </label>
+
+            <label>
+              <span>{copy.topic}</span>
+              <select name="topic" defaultValue={copy.topics[0]} disabled={isSending} required>
+                {copy.topics.map((topic) => <option key={topic} value={topic}>{topic}</option>)}
+              </select>
             </label>
 
             <label>
               <span>{copy.message}</span>
-              <textarea name="message" rows="5" placeholder={copy.messagePlaceholder} required />
+              <textarea name="message" rows="5" placeholder={copy.messagePlaceholder} minLength="10" maxLength="1800" disabled={isSending} required />
             </label>
 
-            <button className="button button--primary contact-submit" type="submit">
-              {copy.submit} <FiSend />
+            <input className="contact-honeypot" name="_honey" type="text" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+
+            <button className="button button--primary contact-submit" type="submit" disabled={isSending}>
+              {isSending ? copy.sending : copy.submit} <FiSend />
             </button>
+            {submitState !== "idle" && submitState !== "sending" && (
+              <p
+                className={`contact-form__status contact-form__status--${submitState}`}
+                role={submitState === "error" ? "alert" : "status"}
+                aria-live="polite"
+              >
+                {submitState === "success" && <><FiCheck /> <span>{copy.success}<strong className="contact-form__reference">{copy.reference}: {referenceCode}</strong></span></>}
+                {submitState === "activation" && <><FiMail /> {copy.activation}</>}
+                {submitState === "error" && copy.error}
+              </p>
+            )}
             <p className="contact-form__note">{copy.note}</p>
           </form>
         </div>

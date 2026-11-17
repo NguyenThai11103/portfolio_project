@@ -32,6 +32,9 @@ export const LocaleProvider = ({ children }) => {
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute("content", isVietnamese ? "vi_VN" : "en_US");
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", description);
   }, [language]);
 
   const value = useMemo(() => ({

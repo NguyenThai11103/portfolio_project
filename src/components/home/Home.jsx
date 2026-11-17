@@ -1,5 +1,6 @@
-import { FiArrowDownRight, FiArrowUpRight, FiGithub, FiGitlab, FiMail, FiMapPin } from "react-icons/fi";
+import { FiArrowDownRight, FiArrowUpRight, FiDownload, FiGithub, FiGitlab, FiMail, FiMapPin } from "react-icons/fi";
 import avatar from "../../assets/images/ava.jpg";
+import resumeUrl from "../../../NguyenNgocDuyThai_CV_Optimized.pdf?url";
 import { profile } from "../../data/portfolioData";
 import { useLocale } from "../../context/LocaleContext";
 import "./Home.css";
@@ -32,8 +33,11 @@ const Home = () => {
             <a className="button button--primary" href="#portfolio">
               {copy.projectsCta} <FiArrowDownRight />
             </a>
-            <a className="button button--outline" href={`mailto:${profile.email}`}>
+            <a className="button button--outline" href="#contact">
               {copy.contactCta} <FiMail />
+            </a>
+            <a className="button button--resume" href={resumeUrl} download="Nguyen-Ngoc-Duy-Thai-CV.pdf">
+              {copy.resumeCta} <FiDownload />
             </a>
           </div>
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   FiActivity,
   FiArrowUpRight,
@@ -12,6 +13,7 @@ import {
   FiShoppingBag,
   FiTruck,
   FiUsers,
+  FiX,
 } from "react-icons/fi";
 import { useLocale } from "../../context/LocaleContext";
 import "./Portfolio.css";
@@ -54,7 +56,7 @@ const RepositoryLink = ({ href, label, title }) => {
   );
 };
 
-const ProjectCard = ({ project, index, copy, language, compact = false }) => (
+const ProjectCard = ({ project, index, copy, language, compact = false, onDetails }) => (
   <article
     className={`project-card${compact ? " project-card--compact" : ""}`}
     data-reveal="scale"
@@ -63,6 +65,7 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
     <div className={`project-visual project-visual--${project.icon}`}>
       {project.image ? (
         <img
+          className="project-preview-image"
           src={project.image}
           alt={`${language === "vi" ? "Ảnh dự án" : "Project preview"} ${project.title}`}
           loading="lazy"
@@ -139,13 +142,108 @@ const ProjectCard = ({ project, index, copy, language, compact = false }) => (
           )}
         </div>
       )}
+
+      {project.caseStudy && (
+        <button className="project-details" type="button" onClick={() => onDetails(project)} aria-label={`${copy.detailsLabel}: ${project.title}`}>
+          <FiBookOpen /> {copy.detailsLabel} <FiArrowUpRight />
+        </button>
+      )}
     </div>
   </article>
 );
 
+const CaseStudyModal = ({ project, copy, onClose }) => {
+  const closeButtonRef = useRef(null);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  return (
+    <div className="case-study-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+      <article className="case-study" role="dialog" aria-modal="true" aria-labelledby="case-study-title">
+        <button ref={closeButtonRef} className="case-study__close" type="button" onClick={onClose} aria-label={copy.closeLabel}>
+          <FiX />
+        </button>
+
+        <div className="case-study__hero">
+          <span className="mono-label">{project.category}</span>
+          <h3 id="case-study-title">{project.title}</h3>
+          <p>{project.subtitle}</p>
+        </div>
+
+        <div className="case-study__grid">
+          <section>
+            <span>01</span>
+            <h4>{copy.caseStudyLabels.challenge}</h4>
+            <p>{project.caseStudy.challenge}</p>
+          </section>
+          <section>
+            <span>02</span>
+            <h4>{copy.caseStudyLabels.approach}</h4>
+            <p>{project.caseStudy.approach}</p>
+          </section>
+          <section className="case-study__wide">
+            <span>03</span>
+            <h4>{copy.caseStudyLabels.architecture}</h4>
+            <p>{project.caseStudy.architecture}</p>
+            <ul className="project-stack">
+              {project.stack.map((technology) => <li key={technology}>{technology}</li>)}
+            </ul>
+          </section>
+          <section className="case-study__wide">
+            <span>04</span>
+            <h4>{copy.caseStudyLabels.highlights}</h4>
+            <ul className="case-study__highlights">
+              {project.caseStudy.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <div className="case-study__actions">
+          <a className="button button--primary" href={project.source} target="_blank" rel="noreferrer">
+            {copy.sourceLabel} {project.platform === "gitlab" ? <FiGitlab /> : <FiGithub />}
+          </a>
+          {project.docs && (
+            <a className="button button--outline" href={project.docs} target="_blank" rel="noreferrer">
+              {copy.docsLabel} <FiBookOpen />
+            </a>
+          )}
+          {project.live && (
+            <a className="button button--outline" href={project.live} target="_blank" rel="noreferrer">
+              {copy.liveLabel} <FiArrowUpRight />
+            </a>
+          )}
+        </div>
+      </article>
+    </div>
+  );
+};
+
 const Portfolio = () => {
   const { content, language } = useLocale();
   const copy = content.portfolio;
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => setSelectedProject(null), [language]);
+
+  const matchesFilter = (project) => activeFilter === "all" || project.filterTags.includes(activeFilter);
+  const featuredProjects = copy.projects.filter(matchesFilter);
+  const courseProjects = copy.courseProjects.filter(matchesFilter);
+  const hasProjects = featuredProjects.length + courseProjects.length > 0;
 
   return (
     <section className="section portfolio" id="portfolio">
@@ -158,37 +256,60 @@ const Portfolio = () => {
           <p className="section-copy">{copy.copy}</p>
         </div>
 
-        <div className="project-group">
-          <div className="project-group__heading" data-reveal>
-            <h3>{copy.featuredLabel}</h3>
-            <p>{copy.featuredCopy}</p>
-          </div>
-          <div className="project-grid project-grid--featured">
-            {copy.projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} copy={copy} language={language} />
-            ))}
-          </div>
+        <div className="project-filters" role="group" aria-label={copy.filtersLabel} data-reveal>
+          {copy.filters.map(([value, label]) => (
+            <button
+              key={value}
+              type="button"
+              className={activeFilter === value ? "is-active" : ""}
+              aria-pressed={activeFilter === value}
+              onClick={() => setActiveFilter(value)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
-        <div className="project-group project-group--coursework">
-          <div className="project-group__heading" data-reveal>
-            <h3>{copy.courseLabel}</h3>
-            <p>{copy.courseCopy}</p>
+        {featuredProjects.length > 0 && (
+          <div className="project-group">
+            <div className="project-group__heading" data-reveal>
+              <h3>{copy.featuredLabel}</h3>
+              <p>{copy.featuredCopy}</p>
+            </div>
+            <div className="project-grid project-grid--featured">
+              {featuredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} index={copy.projects.indexOf(project)} copy={copy} language={language} onDetails={setSelectedProject} />
+              ))}
+            </div>
           </div>
-          <div className="project-grid project-grid--compact">
-            {copy.courseProjects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={copy.projects.length + index}
-                copy={copy}
-                language={language}
-                compact
-              />
-            ))}
+        )}
+
+        {courseProjects.length > 0 && (
+          <div className="project-group project-group--coursework">
+            <div className="project-group__heading" data-reveal>
+              <h3>{copy.courseLabel}</h3>
+              <p>{copy.courseCopy}</p>
+            </div>
+            <div className="project-grid project-grid--compact">
+              {courseProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={copy.projects.length + copy.courseProjects.indexOf(project)}
+                  copy={copy}
+                  language={language}
+                  compact
+                  onDetails={setSelectedProject}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {!hasProjects && <p className="project-empty" role="status">{copy.emptyState}</p>}
       </div>
+
+      {selectedProject && <CaseStudyModal project={selectedProject} copy={copy} onClose={() => setSelectedProject(null)} />}
     </section>
   );
 };
